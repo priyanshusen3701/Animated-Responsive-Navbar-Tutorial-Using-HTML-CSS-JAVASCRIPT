@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!---IT is created by NEXTinCode-->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!---This is another link for icons-->
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+  <!---This is another link for icons-->
+
+  <!---link css external files-->
+  <link rel="stylesheet" href="style.css">
+  <!---link css external files-->
+
+
+  <title>stylish navbar with hover effect || NEXTinCode</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <ul>
+
+      <li class="active">
+        <a href="#">
+          <i class='bx bx-home icon'></i>
+          <i class='bx bxs-home activeIcon'></i>
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#">
+          <i class='bx bx-user icon'></i>
+          <i class='bx bxs-user activeIcon'></i>
+        </a>
+      </li>
+
+      <li>
+        <a href="#">
+          <i class='bx bx-heart icon'></i>
+          <i class='bx bxs-heart activeIcon'></i>
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#">
+          <i class='bx bx-folder icon'></i>
+          <i class='bx bxs-folder activeIcon'></i>
+        </a>
+      </li>
+
+
+      <li>
+        <a href="#">
+          <i class='bx bx-cog icon'></i>
+          <i class='bx bxs-cog activeIcon'></i>
+        </a>
+      </li>
+
+      <div class="indicator"></div>
+
+    </ul>
+  </div>
+
+  <!--for internal js -->
+
+  <script>
+    const navBar = document.querySelector(".navbar")
+    allLi = document.querySelectorAll("li");
+
+    allLi.forEach((li, index) => {
+      li.addEventListener("click", e => {
+        e.preventDefault();
+        navBar.querySelector(".active").classList.remove("active");
+        li.classList.add("active");
+
+        const indicator = document.querySelector(".indicator");
+        indicator.style.transform = `translateX(calc(${index * 90}px))`;
+      });
+    });
+  </script>
+
+</body>
+
+</html>
